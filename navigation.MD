@@ -33,4 +33,18 @@ namespace Shopping_List
 }
 
 ```
+using Shopping_List.Views;
+''' 
+
+The using statement exposes the Views folder to the App class. Teh Views folder will contain the XAML markup file for the UI
+
+```
+ Routing.RegisterRoute(nameof(CreateListView), typeof(CreateListView));
+
+```
+
+The Routing.RegisterRoute will register the root to the CreateListView view page
+
+
+
 
