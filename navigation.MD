@@ -33,6 +33,8 @@ namespace Shopping_List
 }
 
 ```
+
+```
 using Shopping_List.Views;
 ```
 
