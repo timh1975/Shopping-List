@@ -34,7 +34,7 @@ namespace Shopping_List
 
 ```
 using Shopping_List.Views;
-''' 
+```
 
 The using statement exposes the Views folder to the App class. Teh Views folder will contain the XAML markup file for the UI
 
