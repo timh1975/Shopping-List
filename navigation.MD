@@ -82,6 +82,7 @@ xmlns:view ="clr-namespace:Shopping_List.Views"
 xmlns is the namespace for the View folder
 
 ```
+```
 <ShellContent
     Title="Create Shopping List"
     ContentTemplate="{DataTemplate view:CreateListView}"
@@ -89,6 +90,53 @@ xmlns is the namespace for the View folder
 
 ```
 This line adds CreateListView to the ShellContent
+
+### Add the view(s) to the builder services to teh MauiPrograms.cs
+
+```
+using Microsoft.Extensions.Logging;
+using Shopping_List.ViewModel;
+
+namespace Shopping_List
+{
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                });
+
+
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<MainPageViewModel>();
+
+
+#if DEBUG
+            builder.Logging.AddDebug();
+#endif
+
+            return builder.Build();
+        }
+    }
+}
+
+```
+```
+builder.Services.AddTransient<MainPageViewModel>();
+
+```
+This adds the ViewModels to the builder services.  The ViewModel will be discussed below
+
+### The ViewModels
+
+
+
 
 
 
